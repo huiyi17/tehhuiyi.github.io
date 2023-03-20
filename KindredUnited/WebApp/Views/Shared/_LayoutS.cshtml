@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kindred United</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/brands.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/solid.min.css" rel="stylesheet" />
+    <script src="~/lib/chartjs/Chart.min.js"></script>
+    <script src="~/lib/chartjs/chartjs-plugin-labels.min.js"></script>
+    <script src="~/lib/dropzone/dropzone.js"></script>
+    <script src="~/lib/dropzone/dropzone-amd-module.js"></script>
+    <link href="~/lib/dropzone/basic.css" rel="stylesheet" />
+    <link href="~/lib/dropzone/dropzone.css" rel="stylesheet" />
+
+    @RenderSection("MoreScripts", false)
+
+    <link href="~/css/all.css" rel="stylesheet" />
+    <link href="~/css/header.css" rel="stylesheet" />
+   
+
+    <script>
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            //alert("user clicked!");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.user-img')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+            else if (!event.target.matches('.fam-img')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content2");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function myFunction2() {
+            document.getElementById("myDropdown2").classList.toggle("show");
+        }
+
+
+
+    </script>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #FCF6F1;
+        }
+
+        .wrapper {
+            display: flex;
+            position: relative;
+        }
+
+            .wrapper .sidebar {
+                width: 200px;
+                height: 100%;
+                background: #FFEED6;
+                @*background: #d7cffb;*@
+                padding: 0px 0px;
+                position: fixed;
+            }
+
+                .wrapper .sidebar h2 {
+                    color: #fff;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                .wrapper .sidebar ul li {
+                    padding: 15px;
+                    border-bottom: 1px solid #bdb8d7;
+                    border-bottom: 1px solid rgba(0,0,0,0.05);
+                    border-top: 1px solid rgba(255,255,255,0.05);
+                }
+
+                    .wrapper .sidebar ul li a {
+                        color: #325F8A;
+                        display: block;
+                    }
+
+                        .wrapper .sidebar ul li a .fas {
+                            width: 25px;
+                        }
+
+                        .wrapper .sidebar ul li a .far {
+                            width: 25px;
+                        }
+
+                        .wrapper .sidebar ul li a .fab {
+                            width: 25px;
+                        }
+
+                    .wrapper .sidebar ul li:hover {
+                        background-color: #FBAB3E;
+                    }
+
+                        .wrapper .sidebar ul li:hover a {
+                            text-decoration: none;
+                            color: #fff;
+                        }
+
+                .wrapper .sidebar .social_media {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                }
+
+                    .wrapper .sidebar .social_media a {
+                        display: block;
+                        width: 40px;
+                        background: #325F8A;
+                        height: 40px;
+                        line-height: 45px;
+                        text-align: center;
+                        margin: 0 5px;
+                        color: #bdb8d7;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                    }
+
+                    .wrapper .sidebar .social_media .fb:hover {
+                        background: #3571ff;
+                    }
+
+                    .wrapper .sidebar .social_media .tt:hover {
+                        background: #00c1ff;
+                    }
+
+                    .wrapper .sidebar .social_media .ig:hover {
+                        background: #ff0075;
+                    }
+
+
+
+                        .wrapper .main_content {
+                            width: 100%;
+                            margin-left: 200px;
+                        }
+
+                .wrapper .main_content .header {
+                    padding: 20px;
+                    background: #fff;
+                    color: #717171;
+                    border-bottom: 1px solid #e0e4e8;
+                }
+
+                .wrapper .main_content .info {
+                    margin: 20px;
+                    color: #717171;
+                    line-height: 25px;
+                }
+
+                    .wrapper .main_content .info div {
+                        margin-bottom: 20px;
+                    }
+
+        .logo {
+            padding: 0px 0px 0px 10px;
+            margin-bottom: 50px;
+            width: 180px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <a href="~/Dashboard/index">
+                <img class="logo" src="~/assets/KuLogo.png">
+            </a>
+            <ul>
+                <li><a href="~/Home/index"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="~/Journal/MyJournal"><i class="far fa-images"></i>Gallery</a></li>
+                <li><a href="~/Journal/Create"><i class="fas fa-camera"></i>Upload</a></li>
+                <li><a href="~/Calendar/Index"><i class="far fa-calendar-alt"></i>Calender</a></li>
+                <li><a href="~/Gamification/achievement"><i class="fas fa-trophy"></i>Achievements</a></li>
+                <li><a href="~/Gamification/activity"><i class="fas fa-running"></i>Activities</a></li>
+                <li><a href="~/Gamification/competition"><i class="fas fa-medal"></i>Ranking</a></li>
+                <li><a href="#"><i class="fab fa-cc-paypal"></i>Payment</a></li>
+                <li><a href="~/Fundraiser/Index"><i class="fas fa-search-dollar"></i>Fundraise</a></li>
+
+            </ul>
+                <div class="social_media">
+                    <a class="fb" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="tt" href="https://twitter.com/explore"><i class="fab fa-twitter"></i></a>
+                    <a class="ig" href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+                </div>
+</div>
+        @*<div class="main_content">
+            <div class="header"></div>
+            <div class="info">
+            </div>
+        </div>*@
+    </div>
+    <header>
+        @*<div class="search-area">
+            <input type="text" class="search-txt" name="" placeholder="Type to search ~" />
+
+            <a class="search-btn" href="#">
+                <i class="fas fa-search"></i>
+            </a>
+
+        </div>*@
+
+        <div class="search-area">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input type="text" name="" value="" />
+        </div>
+
+        <div class="user-area">
+            <a href="#" class="notification">
+                <i class="far fa-comments"></i><span class="circle">16</span>
+            </a>
+
+
+            @*<a href="#">
+            <div class="user-img" onclick="myFunction()"></div>
+            <i class="fas fa-angle-down"></i>
+        </a>*@
+
+            <div class="dropdown">
+                <div class="user-img" onclick="myFunction()"></div>
+                <i class="fas fa-angle-down"></i>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                </div>
+            </div>
+
+            @*<div class="dropdown">
+            <div class="fam-img" data-toggle="dropdown"></div>
+            <i class="fas fa-angle-down"></i>
+            <div id="myDropdown2" class="dropdown-content">
+                <a href="#">Family Registry</a>
+            </div>
+        </div>*@
+
+        <div class="dropdown2">
+            <div class="fam-img" onclick="myFunction2()"></div>
+            <i class="fas fa-angle-down"></i>
+            <div id="myDropdown2" class="dropdown-content2">
+                <a href="#">Family Registry</a>
+            </div>
+        </div>
+
+
+            <a href="#">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </header>
+
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

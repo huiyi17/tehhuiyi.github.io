@@ -1,0 +1,120 @@
+﻿@model Transfer
+
+@{ Layout = "_LayoutNEW"; }
+
+<style>
+    .button {
+        display: inline-block;
+        padding: 8px 18px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        float: right;
+    }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+</style>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Family Members for Payment</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <form method="post"
+              asp-controller="Payment"
+              asp-action="AddMember"
+              enctype="multipart/form-data">
+
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <h2>New Payee</h2>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4" asp-for="Member">Enter Payee Name:</label>
+                <div class="col-sm-6">
+                    <input type="text" asp-for="Member" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4" asp-for="Email">Enter Payee Email :</label>
+                <div class="col-sm-6">
+                    <input type="text" asp-for="Email" class="form-control" />
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4" asp-for="Notes">Notes:</label>
+                <div class="col-sm-6">
+                    <textarea asp-for="Notes" rows="8" cols="20"
+                              class="form-control"></textarea>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4" asp-for="Photo">Payee Profile :</label>
+                <div class="col-sm-6">
+                    <input type="file" asp-for="Photo" class="form-control-file" />
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="offset-sm-4 col-sm-6">
+                    <button type="submit" class="button">Add Payee!</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-4 col-sm-6">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                </div>
+            </div>
+
+
+            @if (ViewData["Message"] != null)
+            {
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-6">
+                        <div class="alert alert-@ViewData["MsgType"]">
+                            <text>@Html.Raw(ViewData["Message"])</text>
+                        </div>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+
+</body>
+</html>

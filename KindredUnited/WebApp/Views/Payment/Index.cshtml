@@ -1,0 +1,98 @@
+﻿@model List<Transfer>
+
+@{ Layout = "_LayoutNEW"; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Family Transfer</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/brands.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/solid.min.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="container">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-@TempData["MsgType"]">
+                @TempData["Message"]
+            </div>
+        }
+        <table class="table table-condensed table-hover">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Member</th>
+                <th scope="col">Email</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Action</th>
+
+            </tr>
+            @foreach (Transfer transfer in Model)
+            {
+                <tr>
+                    <td>@transfer.Id</td>
+                    <td><a href="/Payment/Edit/@transfer.Id">@transfer.Member</a></td>
+                    <td>@transfer.Email.ToString()</td>
+                    <td>
+                        <img src="/photos/@transfer.Picture" width="100" />
+                    </td>
+                    <td>@transfer.Notes</td>
+
+                    <td>
+                        <a href="/Payment/Delete/@transfer.Id"
+                           onclick="return confirm('Delete  @transfer.Member ?')">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+
+        <a href='/Payment/Add'>
+            <input type='button' value='Add New Payee' />
+        </a>
+
+        <br />
+        <br />
+        <p>
+            <div id="paypal-button-container"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=SGD" data-sdk-integration-source="button-factory"></script>
+            <script>
+                paypal.Buttons({
+                    style: {
+                        shape: 'pill',
+                        color: 'gold',
+                        layout: 'vertical',
+                        label: 'pay',
+
+                    },
+                    createOrder: function (data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: '1'
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function (data, actions) {
+                        return actions.order.capture().then(function (details) {
+                            alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                        });
+                    }
+                }).render('#paypal-button-container');
+            </script>
+
+
+        </p>
+    </div>
+</body>
+</html>
