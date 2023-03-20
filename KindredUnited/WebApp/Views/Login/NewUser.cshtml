@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+@model NewUser
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @{
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/lib/jquery/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery/jquery.validate.unobtrusive.min.js"></script>
+        <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/brands.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/solid.min.css" rel="stylesheet" />
+        <script src="~/lib/chartjs/Chart.min.js"></script>
+        <script src="~/lib/chartjs/chartjs-plugin-labels.min.js"></script>
+
+        <link href="~/css/login.css" rel="stylesheet" />
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script>
+           @* $(document).ready(function () {
+                swal("Welcome @User.Identity.Name!", "You have successfully registered!", "success");
+            });*@
+
+
+        </script>
+    }
+</head>
+<body>
+    <img src="~/assets/KuLogo.png" height="80" width="200" /><br/>
+    <div class="container" id="container">
+        @*<div class="form-container sign-up-container">*@
+        <form method="post" asp-controller="Login" asp-action="NewUser">
+            <h1>Join Your Family by Signing Up</h1>
+            <!--<div class="social-container">-->
+            @*<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>*@
+            <!--</div>-->
+            @*<span>or use your email for registration</span>*@
+            <input type="text" asp-for="UserId" placeholder="UserId" />
+            <span asp-validation-for="UserId" class="text-danger"></span>
+
+            <input type="password" asp-for="UserPw" placeholder="Password" />
+            <span asp-validation-for="UserPw" class="text-danger"></span>
+
+            <input type="password" asp-for="UserPw2" placeholder="Password Again" />
+            <span asp-validation-for="UserPw2" class="text-danger"></span>
+
+            <input type="email" asp-for="Email" placeholder="Email - example: 123@gmail.com" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <button type="submit">Link</button>
+
+        </form>
+        @*</div>*@
+        
+    </div>
+
+</body>
+</html>
