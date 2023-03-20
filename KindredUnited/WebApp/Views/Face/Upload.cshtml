@@ -1,0 +1,38 @@
+﻿@{ Layout = "_LayoutNEW"; }
+
+<!-- Riski's Dropzone -->
+<link href="~/lib/dropzone/dropzone.css" rel="stylesheet" />
+<script src="~/lib/dropzone/dropzone.js"></script>
+<script src="~/lib/dropzone/dropzone-amd-module.js"></script>
+<link href="~/lib/dropzone/basic.css" rel="stylesheet" />
+
+<script>
+    $(document).ready(function () {
+        Dropzone.options.uploader = {
+            paramName: "file",
+            maxFilesize: 2,
+            accept: function (file, done) {
+                if (file.name == "test.jpg") {
+                    alert("Can't upload a test file.");
+                }
+                else {
+                    //Show a confirm alert and display the image on the page.
+                }
+            }
+        };
+    });
+</script>
+
+
+<div class="row">
+    <div class="col-md-9">
+        <div id="dropzone">
+            <form asp-action="Upload" asp-controller="Face" method="post" class="dropzone needsclick dz-clickable" id="uploader">
+                <div class="dz-message needsclick">
+                    Drop files here or click to upload.<br>
+                </div>
+            </form>
+            <a class="btn btn-primary" asp-controller="Dashboard" asp-action="Index">Return to Dashboard</a>
+        </div>
+    </div>
+</div>

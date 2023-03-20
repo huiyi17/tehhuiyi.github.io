@@ -1,0 +1,112 @@
+﻿@model Checkquest
+
+@*@{
+    Layout = "~/Views/Shared/_LayoutNEW.cshtml";
+}*@
+
+<head>
+    <script>
+        //
+        function checkphoto() {
+
+            var apiUrl = "/api/analyze2";
+
+
+            $.getJSON(apiUrl, function (result) {
+                $.each(result.tags, function (i, item) {
+                    if (i == 7) {
+                        if (item.name == "kite") {
+                            
+                            //$("#result").html("<h4>Points added!</h4>");
+                            addpoint();
+                            //$("#btnload").html("<input type='button' id='btnload' value='Submit' class='btn btn - primary' disabled/>");
+                            uploadphoto();
+                            //$("#btnload").html("<button type='button' disabled>Submit</button>");
+                            
+                        }
+                        else {
+                            $("#result").html("<h4>Invalid photo!</h4>");
+                            //alert("invalid photo!");
+                        }
+                    }
+
+                });
+            });
+
+        }
+
+        function addpoint() {
+            var apiUrl = "/api/addpoint";
+            $.post(apiUrl, function (result) {
+                if (result == 0)
+                    alert("points added!");
+                else
+                    alert("Failed to add points.");
+
+            }, );
+
+        }
+
+        function uploadphoto() {
+            var apiUrl = "/api/uploadphoto";
+            
+            $.post(apiUrl, function (result) {
+                
+                if (result == 0)
+                    alert("picture added!");
+                else
+                    alert("Failed to add picture.");
+
+            });
+
+        }
+
+
+        $(document).ready(function () {
+
+            $("#btnload").click(checkphoto);
+
+
+        });</script>
+</head>
+<body>
+
+
+    <div class="form-group row">
+        <label class="control-label col-sm-2" asp-for="Photo">Photo : </label>
+        <div class="col-sm-6">
+            <input type="file" asp-for="Photo" class="form-control-file" />
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-sm-2 col-sm-6">
+            <button id="btnload" type="button" data-toggle="modal" data-target="#resultmodal">Submit</button>
+            @*<input type="submit" id="btnload" value="Submit" class="btn btn-primary" />*@
+        </div>
+
+    </div>
+    @*<div class="form-group row">
+        <div class="offset-sm-2 col-sm-6">
+            <button id="btnload" type="button" >Go</button>
+        </div>
+    </div>*@
+
+    <div class="modal fade" id="resultmodal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="result"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+

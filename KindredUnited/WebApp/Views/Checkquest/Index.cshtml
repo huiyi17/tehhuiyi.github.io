@@ -1,0 +1,15 @@
+﻿@model KindredUnited.Models.AnalyzeObjectModel
+
+<h1>Computer Vision API Example</h1>﻿
+<div class="col-12">
+
+    <div class="col-8 " style="padding:0px!important">
+        <img src="~/images/familylunch1.jpg" />
+    </div>
+    <div class="col-4" style="padding:0px!important">
+        <h4>Image Information</h4>
+        <div> <strong>Description:</strong> <p style="color:green"> @Model.Description.Captions[0].Text </p></div>
+        <div> <strong>Categories Name:</strong> <p style="color:green">@Model.Categories[0].Name </p> </div>
+        <div> <strong>Tags:</strong> <p style="color:green">@String.Join(", ", Model.Description.Tags.ToArray())</p></div>
+    </div>
+</div>

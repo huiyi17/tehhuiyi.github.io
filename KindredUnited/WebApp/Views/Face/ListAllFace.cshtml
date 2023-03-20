@@ -1,0 +1,43 @@
+﻿@{ Layout = "_LayoutAdminNew"; }
+@model List<ListAsync>
+
+
+<script>
+    $(document).ready(function () {
+        Dropzone.options.uploader = {
+            paramName: "file",
+            maxFilesize: 2,
+            accept: function (file, done) {
+                if (file.name == "test.jpg") {
+                    alert("Can't upload a test file.");
+                }
+                else {
+                }
+            }
+        };
+    });
+</script>
+
+
+<h3><br /><u>Face Registered in Cognitive Services</u></h3>
+<table id="jsUsersTable" class="table ">
+    <thead>
+        <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Face Id</th>
+            <th scope="col">Person Id</th>
+            <th scope="col">Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.LastName @a.FirstName</td>
+                <td>@a.FaceId</td>
+                <td>@a.PersonId</td>
+                <td>@a.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

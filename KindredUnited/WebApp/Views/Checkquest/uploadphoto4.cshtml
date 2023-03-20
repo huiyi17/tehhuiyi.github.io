@@ -1,0 +1,85 @@
+﻿@model Checkquest
+
+
+<head>
+    <script>
+        //
+        function checkphoto() {
+
+            var apiUrl = "/api/analyze4";
+
+
+            $.getJSON(apiUrl, function (result) {
+                $.each(result.tags, function (i, item) {
+                    if (i == 4) {
+                        if (item.name == "cartoon") {
+
+                            addpoint();
+                            uploadphoto();
+                            $("#btnload").html("<button type='button' disabled>Submit</button>");
+                        }
+                        else {
+                            alert("invalid photo!");
+                            $("#btnload").html("<button type='button' disabled>Submit</button>");
+                        }
+                    }
+
+                });
+            });
+
+        }
+
+        function addpoint() {
+            var apiUrl = "/api/addpoint";
+            $.post(apiUrl, function (result) {
+                if (result == 0)
+                    alert("points added!");
+                else
+                    alert("Failed to add points.");
+
+            });
+
+        }
+
+        function uploadphoto() {
+            var apiUrl = "/api/uploadphoto";
+
+            $.post(apiUrl, function (result) {
+
+                if (result == 0)
+                    alert("picture added!");
+                else
+                    alert("Failed to add picture.");
+
+            });
+
+        }
+
+
+        $(document).ready(function () {
+
+            $("#btnload").click(checkphoto);
+
+
+        });</script>
+</head>
+<body>
+
+
+    <div class="form-group row">
+        <label class="control-label col-sm-2" asp-for="Photo">Photo : </label>
+        <div class="col-sm-6">
+            <input type="file" asp-for="Photo" class="form-control-file" />
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-sm-2 col-sm-6">
+            <button id="btnload" type="button" asp-controller="Checkquest" asp-action="uploadphoto">Submit</button>
+            @*<input type="submit" id="btnload" value="Submit" class="btn btn-primary" />*@
+        </div>
+
+    </div>
+
+</body>
+

@@ -1,0 +1,65 @@
+﻿
+@model List<AppUser>
+
+@section MoreScripts {
+   <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+   <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+
+   <script>
+      $(document).ready(function () {
+         $('#jsTable').DataTable({
+            paging: true,
+            ordering: true,
+            searching: true,
+            info: true,
+            lengthMenu: [[6, 10, 20, -1], [6, 10, 20, "All"]]
+         });
+      });
+   </script>
+}
+
+
+<h2>Users</h2>
+
+@if (TempData["Message"] != null)
+{
+   <div class="alert alert-@TempData["MsgType"]">
+      @TempData["Message"]
+   </div>
+}
+
+<table id="jsTable" class="table">
+   <thead>
+      <tr>
+         <th scope="col">UserId</th>
+         <th scope="col">FirstName</th>
+         <th scope="col">LastName</th>
+         <th scope="col">Email</th>
+         <th scope="col">UserRole</th>
+         <th scope="col">LastLogin</th>
+
+      </tr>
+   </thead>
+   <tbody>
+      @foreach (AppUser mv in Model)
+      {
+      <tr>
+         <td>@mv.UserId</td>
+        @* <td>@mv.FirstName</td>
+         <td>@mv.LastName</td>
+         <td>@mv.Email</td>*@
+         <td>@mv.UserRole</td>
+
+         <td>@String.Format("{0:MMM yyyy}", mv.LastLogin)</td>
+
+
+        
+
+      </tr>
+      }
+   </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,183 @@
+﻿@{
+    Layout = null;
+    var msg = ViewBag.SuccessMsg;
+}
+
+@model AppUser
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @{
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/lib/jquery/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery/jquery.validate.unobtrusive.min.js"></script>
+        <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/brands.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/solid.min.css" rel="stylesheet" />
+        <script src="~/lib/chartjs/Chart.min.js"></script>
+        <script src="~/lib/chartjs/chartjs-plugin-labels.min.js"></script>
+
+        <link href="~/css/login.css" rel="stylesheet" />
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                const signUpButton = document.getElementById("signUp");
+                const signInButton = document.getElementById("signIn");
+                const container = document.getElementById("container");
+
+                signUpButton.addEventListener("click", () => {
+                    //alert("signup clicked");
+                    container.classList.add("right-panel-active");
+                });
+
+                signInButton.addEventListener("click", () => {
+                    container.classList.remove("right-panel-active");
+                });
+
+
+                const signupbtn = document.getElementById("signupbtn");
+                const signinbtn = document.getElementById("signinbtn");
+
+                signupbtn.addEventListener("click", () => {
+
+                });
+
+                //signinbtn.addEventListener("click", () => {
+                    
+                        var msg = '@msg';
+                        //alert(msg);
+                    
+                if (msg == 'error') {
+                    swal("Error!", "Incorrect User ID or Password!", "error");
+                        
+                }
+                else if (msg == 'success'){
+                    swal("Welcome!", "You have successfully login!", "success");
+                }
+                    
+                        
+               // });
+
+                $("#signupbtnExist").click(CreateNewUser);
+
+            });
+
+            function CreateNewUser() {
+                var url = "/Login/NewUser";
+
+                // Insert code to peform ajax call below
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: formdata,
+                    success: function (data) {
+                        if (data == 0)
+                            alert("Attachment upload failed!")
+                        else {
+                            alert("New attachment added!");
+                            $("#newAttachmentModal").modal("hide");
+                        }
+                    },
+                    contentType: false,
+                    processData: false
+                });
+            }
+
+
+
+
+        </script>
+    }
+</head>
+<body>
+    <img src="~/assets/KuLogo.png" height="80" width="200" /><br/>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form method="post" asp-controller="Login" asp-action="Register">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    @*<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>*@
+                </div>
+                @*<span>or use your email for registration</span>*@
+                <input type="text" asp-for="UserId" placeholder="UserID" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+                <input type="password" asp-for="UserPw" placeholder="Password" />
+                <span asp-validation-for="UserPw" class="text-danger"></span>
+                <input type="password" asp-for="UserPw2" placeholder="Password Again" />
+                <span asp-validation-for="UserPw2" class="text-danger"></span>
+                @* <div asp-validation-summary="All" class="text-danger"></div>*@
+                <button id="signupbtn" type="submit">Sign Up</button>
+
+                <span><b>or</b></span>
+                <a class="button2" id="signupbtnExist" asp-controller="Login" asp-action="NewUser">
+                    Existing Family Sign Up Here
+                </a>
+            </form>
+                @*@if (ViewData["Message"] != null)
+        {
+            <div class="form-group row">
+                <div class="alert alert-@ViewData["MsgType"]">
+                    <text>@ViewData["Message"]</text>
+                </div>
+            </div>
+        }*@
+            
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form method="post" asp-controller="Login" asp-action="Login">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    @*<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>*@
+                </div>
+                @*<span>or use your account</span>*@
+                <input type="text" asp-for="UserId" placeholder="UserID" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+                <input type="password" asp-for="UserPw" placeholder="Password" />
+                <span asp-validation-for="UserPw" class="text-danger"></span>
+                <a href="#">Forgot your password?</a>
+                <button id="signinbtn" type="submit">Sign In</button>
+
+
+                @* @if (ViewData["Message"] != null)
+        {
+            <div class="form-group row">
+                <div class="alert alert-@ViewData["MsgType"]">
+                    <text>@ViewData["Message"]</text>
+                </div>
+            </div>
+        }*@
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Are You A Kindred User?</h1>
+                    <p>Login now with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Not Yet a Kindred?</h1>
+                    <p>Click the button below to start a journey with us</p>
+                    <button class="ghost" id="signUp" type="submit">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Created with <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+        </p>
+    </footer>
+</body>
+</html>

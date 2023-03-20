@@ -1,0 +1,81 @@
+﻿@{ Layout = "_LayoutNEW"; }
+
+@model Person
+
+    <form method="post"
+          asp-controller="Family"
+          asp-action="CreatePerson"
+          enctype="multipart/form-data">
+
+        <div class="form-group row">
+            <div class="offset-sm-5 col-sm-6">
+                <h2>Create Person</h2>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label offset-sm-3 col-sm-1" asp-for="FirstName">First Name:</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="FirstName" class="form-control" placeholder="First Name" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label offset-sm-3 col-sm-1" asp-for="LastName">Last Name:</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="LastName" class="form-control" placeholder="Last Name" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label offset-sm-3 col-sm-1" asp-for="Email">Email:</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="Email" class="form-control" placeholder="Email - example: 123@gmail.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label offset-sm-3 col-sm-1" asp-for="Gender">Gender:</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="Gender" class="form-control" placeholder="Gender - example: Male/Female" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label offset-sm-3 col-sm-1" asp-for="Relationship">Relationship:</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="Relationship" class="form-control" placeholder="Relationship - example: Son/Daughter/Father/Mother" />
+                <span asp-validation-for="Relationship" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label offset-sm-3 col-sm-1" asp-for="Photo">Photo :</label>
+            <div class="col-sm-6">
+                <input type="file" asp-for="Photo" class="form-control-file" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="control-label offset-sm-4 col-sm-1">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+        @if (ViewData["Message"] != null)
+        {
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-6">
+                    <div class="alert alert-@ViewData["MsgType"]">
+                        <text>@ViewData["Message"]</text>
+                    </div>
+                </div>
+            </div>
+        }
+    </form>

@@ -1,0 +1,135 @@
+﻿@model List<Competition>
+@{
+    Layout = "~/Views/Shared/_LayoutNEW.cshtml";
+}
+@section MoreScripts {
+    <script src="~/lib/chartjs/Chart.min.js"></script>
+    <script src="~/lib/chartjs/chartjs-plugin-labels.min.js"></script>
+    <script language="javascript">
+
+      $(document).ready(function () {
+         new Chart(document.getElementById("chart"), {
+            type: '@ViewData["Chart"]',
+            data: {
+               labels: @Json.Serialize(ViewData["Labels"]),
+               datasets: [{
+                  label: '@ViewData["Legend"]',
+                  data: @Json.Serialize(ViewData["Data"]),
+                  backgroundColor: @Json.Serialize(ViewData["Colors"]),
+                  fill: false
+               }]
+            },
+            options: {
+               responsive: false,
+               legend: {
+                  display: @ViewData["ShowLegend"],
+               },
+               title: {
+                  display: true,
+                  text: '@ViewData["Title"]'
+                },
+               scales: {
+                  yAxes: [{
+                     display: true,
+                     gridLines: {
+                        display: false,
+                     },
+                     ticks: {
+                        beginAtZero: true,
+                        stepSize: 1
+                     }
+                  }]
+               }
+            }
+         });
+      });
+
+    </script>
+}
+<div class="row">
+    <canvas id="chart" width="700" height="500"></canvas>
+
+
+    @{string a = ""; }
+    @{string b = ""; }
+    @{string c = ""; }
+    @{string d = ""; }
+    @{string f = ""; }
+    @foreach (Competition comp in Model)
+    {
+        @if (comp.Totalpoints >= 2000)
+        {
+            @if (a.Equals(""))
+            {
+                a += comp.Username;
+            }
+            else
+            {
+                a += "," + comp.Username;
+            }
+
+        }
+        else if (comp.Totalpoints >= 1000)
+        {
+            @if (b.Equals(""))
+            {
+                b += comp.Username;
+            }
+            else
+            {
+                b += "," + comp.Username;
+            }
+        }
+        else if (comp.Totalpoints >= 500)
+        {
+            @if (c.Equals(""))
+            {
+                c += comp.Username;
+            }
+            else
+            {
+                c += "," + comp.Username;
+            }
+        }
+        else if (comp.Totalpoints >= 200)
+        {
+            @if (d.Equals(""))
+            {
+                d += comp.Username;
+            }
+            else
+            {
+                d += "," + comp.Username;
+            }
+        }
+        else
+        {
+            @if (f.Equals(""))
+            {
+                f += comp.Username;
+            }
+            else
+            {
+                f += "," + comp.Username;
+            }
+        }
+
+    }
+    <dl class="dl-horizontal">
+        <dt>A : </dt>
+        <dd>@a</dd>
+        <dt>B : </dt>
+        <dd>@b</dd>
+        <dt>C : </dt>
+        <dd>@c</dd>
+        <dt>D : </dt>
+        <dd>@d</dd>
+        <dt>F : </dt>
+        <dd>@f</dd>
+    </dl>
+</div>
+
+
+
+
+

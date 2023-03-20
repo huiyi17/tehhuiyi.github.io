@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNEW.cshtml";
+}
+
+@*@model DataRowCollection
+<!DOCTYPE html>*@
+<head>
+
+</head>
+
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/js/highcharts.js"></script>
+    <script src="/js/modules/stock.js"></script>
+    <script src="/js/modules/map.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+
+
+
+    @*@{int highest = 0;
+        string name = "";}
+    @foreach (DataRow row in Model)
+    {
+        @if ((int)row["Totalpoints"] > highest)
+        {
+            highest = (int)row["Totalpoints"];
+            name = (string)row["Username"];
+
+        }
+    }
+
+    <h3 style="background-color:yellow">Congrats! @name is the champion for now with @highest points.</h3>*@
+
+    <div id="container" style="width:100%; height:400px;"></div>
+
+
+</body>
+
+<!--Script for Podium Chart-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'FAMILY RANKING '
+            },
+            xAxis: {
+                categories: false,
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+                lineColor: 'transparent',
+                labels: {
+                    enabled: false
+                },
+                minorTickLength: 0,
+                tickLength: 0
+            },
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0,
+                title: {
+                    text: false
+                },
+                labels: {
+                    enabled: false
+                }
+            },
+            legend: {
+                enabled: false
+
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} </b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true,
+                positioner: function (boxWidth, boxHeight, point) {
+                    return {
+                        x: point.plotX,
+                        y: point.plotY + 100
+                    }
+                }
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: -0.3,
+                    borderWidth: 0
+                }
+            },
+
+            series: [{
+                name: 'RATING',
+                data: [
+                    ['MD', 2],
+                    ['ML', 4],
+                    ['SD', 5],
+                    ['JB', 3],
+                    ['TB', 1]
+                ],
+                dataLabels: {
+                    enabled: true,
+                    color: 'white',
+                    align: 'center',
+                    x: 3,
+                    y: 10,
+                    style: {
+                        fontSize: '50px',
+                        fontFamily: 'Verdana, sans-serif',
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }]
+        });
+    });
+
+
+
+</script>

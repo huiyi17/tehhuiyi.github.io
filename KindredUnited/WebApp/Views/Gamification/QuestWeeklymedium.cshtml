@@ -1,0 +1,94 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutS.cshtml";
+}
+
+
+@model List<GamificationQuest2>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+    <style>
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+            .popup .popuptext {
+                visibility: hidden;
+                width: 200px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 1;
+                top: 125%;
+                left: 50%;
+                margin-left: -80px;
+            }
+
+                .popup .popuptext::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 97%;
+                    left: 40%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                }
+
+            .popup .show {
+                visibility: visible;
+                -webkit-animation: fadeIn 1s;
+                animation: fadeIn 1s;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-group row">
+            <div class="form-check form-check-inline">
+                <div class="col-sm-11">
+                    <h2>Medium Quest</h2>
+                </div>
+                <div class="col-sm-12">
+                    <div class="popup" onclick="myFunction()">
+                        <i class="fas fa-info-circle" style="color:darkslateblue;"></i>
+                        <span class="popuptext" id="myPopup">Hi, you will be rewarded 10 points if all weekly medium quests done. If you don't like the quests randomly given to you, you can click 'Swap' to swap the quests.</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        @{ int i = 1;}
+        @foreach (GamificationQuest2 q in Model)
+        {
+
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <h4>@i. @q.QuestName</h4>
+                    @{ i++;}
+                </div>
+
+            </div>
+
+
+        }
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <a href="~/Gamification/QuestWeeklymedium"><input type="submit" value="Swap" class="btn btn-primary" /><br /></a>
+            </div>
+        </div>
+
+    </div>
+</body>

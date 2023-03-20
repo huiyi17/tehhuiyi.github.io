@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "_LayoutNEW";
+}
+
+@section MoreScripts {
+    <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#jsUsersTable').DataTable({
+                ordering: true,
+                paging: true,
+                searching: true,
+                info: true,
+                lengthChange: true,
+                pageLength: 10
+            });
+        });
+    </script>
+}
+
+@model List<EmotionTable>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["MsgType"]">
+        @TempData["Message"]
+    </div>
+}
+<h3><br /><u>Emotion Table</u></h3>
+<table id="jsUsersTable" class="table ">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Date Time</th>
+            <th scope="col">Your Emotion (%)</th>
+            <th scope="col">Picture</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (EmotionTable c in Model)
+        {
+            <tr>
+                <td>@c.firstName @c.lastName</td>
+                <td>@String.Format("{0:dd MMMM yyyy hh:mm tt}", c.timeTaken)</td>
+                <td>
+                    @if (c.anger > 0.50)
+                    {<text>Anger (@(c.anger * 100)%) </text>}
+                else if (c.contempt > 0.50)
+                {<text>Contempt (@(c.contempt * 100)%)</text>}
+            else if (c.disgust > 0.50)
+            {<text>Disgust (@(c.disgust * 100)%)</text>}
+        else if (c.fear > 0.50)
+        {<text>Fear (@(c.fear * 100)%)</text>}
+    else if (c.happiness > 0.50)
+    {<text>Happiness (@(c.happiness * 100)%)</text>}
+else if (c.neutral > 0.50)
+{<text>Neutral (@(c.neutral * 100)%)</text>}
+else if (c.sadness > 0.50)
+{<text>Sadness (@(c.sadness * 100)%)</text>}
+else
+{<text>Surprise (@(c.surprise * 100)%)</text>}
+                </td>
+                <td>
+                    <a href="~/photos/@c.pictureFileName">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

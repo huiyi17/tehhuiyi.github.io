@@ -1,0 +1,97 @@
+﻿@{ Layout = "_LayoutAdminNew"; }
+@model List<MemberInFamily>
+@{
+    string sql = "SELECT FamilyId, FamilyName FROM Family";
+    List<Family> listfam = DBUtl.GetList<Family>(sql);
+}
+
+<style>
+    .collapsibleadm {
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .activeadm, .collapsibleadm:hover {
+            background-color: #555;
+        }
+
+    .contentadm {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .collapsibleadm:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: white;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .activeadm:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+    }
+</style>
+
+
+<h3><br /><u>List of All Members in Family</u></h3>
+
+@foreach (var a in listfam)
+{
+    <button type="button" class="collapsibleadm">User in @a.FamilyName</button>
+    <div class="contentadm">
+        <table id="jsUsersTable" class="table ">
+            <thead>
+                <tr>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Relationship</th>
+                    <th scope="col">Username</th>
+                </tr>
+            </thead>
+            @foreach (var b in Model)
+            {
+                if (a.FamilyId == b.FamilyId)
+                {
+
+                    <tbody>
+                        <tr>
+                            <td>@b.FirstName @b.LastName</td>
+                            <td>@b.Relationship</td>
+                            <td>@b.UserId</td>
+                        </tr>
+                    </tbody>
+
+                }
+
+            }
+        </table>
+
+    </div>
+}
+
+<script>
+    var coll = document.getElementsByClassName("collapsibleadm");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("activeadm");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>

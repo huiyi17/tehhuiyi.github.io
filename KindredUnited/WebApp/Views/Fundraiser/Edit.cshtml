@@ -1,0 +1,115 @@
+﻿@model Goal
+
+@{ Layout = "_LayoutNEW"; }
+
+<style>
+
+    .wrapper {
+        display: inline-block;
+    }
+
+    form {
+        font-family: Arial;
+        padding: 10px;
+        background: #FCF6F1;
+    }
+</style>
+
+
+
+<meta name="viewport" content="width=device-width" />
+<title>Update Goal Details</title>
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+
+<body style="background-color: #FFEED6">
+    <form method="post"
+          asp-controller="Fundraiser"
+          asp-action="EditGoals" style="background-color: #FFEED6">
+
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-5">
+                <h2>Update Goal Details</h2>
+            </div>
+        </div>
+
+        <input type="text" asp-for="GID" hidden />
+        <input type="text" asp-for="GPhoto" hidden />
+
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-5">
+                <img id="ImgPhoto" src="~/goalPic/@Model.GPhoto" style="width:400px;" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="GName">Goal Name:</label>
+            <div class="col-sm-5">
+                <input type="text" asp-for="GName" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <span asp-validation-for="GName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="GDesc">Goal Description :</label>
+            <div class="col-sm-5">
+                <textarea asp-for="GDesc" rows="8" cols="20" class="form-control"></textarea>
+            </div>
+            <div class="col-sm-4">
+                <span asp-validation-for="GDesc" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="GTotal">Goal Amount:</label>
+            <div class="col-sm-5">
+                <input type="text" asp-for="GTotal" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <span asp-validation-for="GTotal" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="GCurr">Current Amount :</label>
+            <div class="col-sm-5">
+                <input type="text" asp-for="GCurr" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <span asp-validation-for="GCurr" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="wrapper offset-sm-2 col-sm-5">
+
+
+            <input type="submit" value="Update Goal" class="btn btn-success" />
+
+
+
+
+            <a asp-controller="Fundraiser" asp-action="Delete"
+               asp-route-id="@Model.GID" onclick="return confirm('Delete Goal @Model.GName?')">
+
+
+                <input type="button" value="Delete Goal" class="btn btn-danger" />
+
+            </a>
+        </div>
+
+        @if (ViewData["Message"] != null)
+        {
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-5">
+                <div class="alert alert-@ViewData["MsgType"]">
+                    <text>@ViewData["Message"]</text>
+                </div>
+            </div>
+        </div>
+        }
+    </form>
+</body>

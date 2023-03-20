@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutNEW.cshtml";
+}
+
+@section MoreScripts {
+    <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#jsTblPerform').DataTable({
+                ordering: false,
+                paging: true,
+                searching: true,
+                info: true,
+                lengthChange: true,
+                pageLength: 10
+            });
+        });
+    </script>
+
+}
+
+@model DataRowCollection
+<h2>Ranking</h2>
+@*<h3><a href="~/Gamification/Chart">Summary</a></h3>*@
+
+
+
+@{int highest = 0;
+    string name = "";}
+@foreach (DataRow row in Model)
+{
+    @if ((int)row["Points"] > highest)
+    {
+        highest = (int)row["Points"];
+        name = (string)row["FamilyName"];
+
+    }
+}
+
+<h3 style="background-color:yellow">Congrats! @name is the champion for now with @highest points.</h3>
+
+
+<div>
+
+
+    <table id="jsTblPerform" class="table">
+        <thead>
+            <tr>
+                <th>Family Name</th>
+                <th>Total Points</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (DataRow row in Model)
+            {
+                <tr>
+                    <td>@row["FamilyName"]</td>
+                    <td>@row["Points"]</td>
+
+                </tr>
+            }
+        </tbody>
+
+
+
+
+    </table>
+</div>
+

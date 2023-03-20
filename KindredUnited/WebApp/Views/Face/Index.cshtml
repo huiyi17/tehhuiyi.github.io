@@ -1,0 +1,33 @@
+﻿@{ Layout = "_LayoutS"; }
+
+
+
+<script>
+    $(document).ready(function () {
+        Dropzone.options.uploader = {
+            paramName: "file",
+            maxFilesize: 2,
+            accept: function (file, done) {
+                if (file.name == "test.jpg") {
+                    alert("Can't upload a test file.");
+                }
+                else {
+                    //Show a confirm alert and display the image on the page.
+                }
+            }
+        };
+    });
+</script>
+
+
+<div class="row">
+    <div class="col-md-9">
+        <div id="dropzone">
+            <form action="/Home/Upload" class="dropzone needsclick dz-clickable" id="uploader">
+                <div class="dz-message needsclick">
+                    Drop files here or click to upload.<br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

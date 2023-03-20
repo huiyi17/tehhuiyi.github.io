@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNEW.cshtml";
+}
+
+
+@model List<Family>
+<h1>Achievement </h1>
+
+
+
+
+<div class="row">
+    @foreach (Family cdd in Model)
+    {
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">
+                    <a asp-controller="Gamification"
+                       asp-action="AchievementDisplay"
+                       asp-route-id="@cdd.FamilyId">
+                        @cdd.OwnerId
+                    </a>
+                </div>
+                <div class="card-body">
+                    <img src="~/family/@cdd.FamilyPic" width="120" height="100">
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

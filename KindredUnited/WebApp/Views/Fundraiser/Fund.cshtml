@@ -1,0 +1,162 @@
+﻿@model Goal
+
+<style>
+    .button {
+        display: inline-block;
+        padding: 8px 18px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        float: right;
+    }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+
+    .progress {
+        height: 25px;
+    }
+
+
+    .progress-bar-striped {
+        width: 100%;
+        background-color: green;
+    }
+
+
+
+    .currVal {
+        color: green;
+        font-size: 40px;
+    }
+
+    .endVal {
+        color: dimgrey;
+        font-size: 20px;
+    }
+</style>
+
+
+
+
+<script>
+        function myFunction() {
+            var checkBox = document.getElementById("myCheck");
+            var textCurr = document.getElementById("textBoxCurrent");
+            if (checkBox.checked == true) {
+                textCurr.style.display = "block";
+            } else {
+                textCurr.style.display = "none";
+            }
+        }
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fund Family Goal</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <form method="post"
+              asp-controller="Fundraiser"
+              asp-action="FundGoal"
+              enctype="multipart/form-data">
+
+            <input type="text" asp-for="GName" hidden />
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <h2>Fund the <@Model.GName> Goal!</h2>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-5">
+                    <img id="ImgPhoto" src="/goalPic/@Model.GPhoto" style="width:400px;"  />
+                </div>
+            </div>
+
+            <div class="offset-sm-2 col-sm-5">
+                <p class="currVal inline"><b>S$@Model.GCurr</b></p>
+                <p class="endVal inline"><b> saved of S$@Model.GTotal</b></p>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="GAdd">Add Fund:</label>
+                <div class="col-sm-5">
+                    <input type="text" asp-for="GAdd" class="form-control" >
+                </div>
+                <div class="col-sm-4">
+                    <span asp-validation-for="GAdd" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="myCheck">Also send Goal Creator a message:</label>
+                    <input type="checkbox" id="myCheck" name="myCheck" onclick="myFunction()">
+                </div>
+            </div>
+
+            <div class="form-group row" id="textBoxCurrent" style="display:none">
+                <label class="control-label col-sm-4" asp-for="GMess">Please type in your message:</label>
+                <div class="col-sm-6">
+                    <input type="text" asp-for="GMess" class="form-control" />
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group row">
+                <div class="offset-sm-4 col-sm-6">
+                    <button type="submit" class="button">Fund Goal!</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-4 col-sm-6">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                </div>
+            </div>
+
+
+            @if (ViewData["Message"] != null)
+            {
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-6">
+                    <div class="alert alert-@ViewData["MsgType"]">
+                        <text>@Html.Raw(ViewData["Message"])</text>
+                    </div>
+                </div>
+            </div>
+            }
+        </form>
+    </div>
+
+</body>
+</html>

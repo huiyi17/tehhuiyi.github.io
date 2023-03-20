@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNEW.cshtml";
+}
+
+
+@model List<Activity2>
+<h1>Activities Suggested </h1>  <h2><a href="~/Gamification/dayweek" style="text-decoration-color:blue"><b><u>Start Quest</u></b><br /></a></h2>
+
+
+
+<div class="row">
+    @foreach (Activity2 cdd in Model)
+    {
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">
+                    <a asp-controller="Gamification"
+                       asp-action="Display"
+                       asp-route-id="@cdd.Act2ID">
+                        @cdd.Act2Name
+                    </a>
+                </div>
+                <div class="card-body">
+                    <img src="~/images/@cdd.Act2Pic" width="120" height="100">
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

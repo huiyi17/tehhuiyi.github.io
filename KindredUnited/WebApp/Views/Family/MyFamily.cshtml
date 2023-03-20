@@ -1,0 +1,122 @@
+﻿@{ Layout = "_LayoutNEW"; }
+
+@model List<MemInFamSY>
+
+@{ string sql = $"SELECT F.FamilyId, F.FamilyPic, F.Statements, F.Points FROM Family F INNER JOIN PersonHasFamily PHF ON PHF.FamilyId = F.FamilyId WHERE PersonId = '{Model[0].PersonId}'";
+    List<MemInFamSY> listfam = DBUtl.GetList<MemInFamSY>(sql);}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Family Registry</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/js/jquery.min.js"></script>
+    <script src="~/lib/jquery/lightbox-plus-jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/brands.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/solid.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/lightbox.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/lightbox.min.css" rel="stylesheet" />
+    <style>
+        .gallery {
+            margin: 10px 90px;
+        }
+
+            .gallery img {
+                transition: 1s;
+                padding: 5px;
+                width: 300px;
+                height: 200px;
+            }
+
+                .gallery img:hover {
+                    filter: grayscale(100%);
+                    transform: scale(1.1);
+                }
+
+        .item {
+            width: 300px;
+            text-align: center;
+            display: block;
+            background-color: transparent;
+            border: 1px solid transparent;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            float: left;
+        }
+    </style>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    </script>
+</head>
+<body>
+
+    <div class="gallery">
+        @if (Model != null)
+        {
+            <div class="form-group row">
+                <div class="offset-sm-5 col-sm-6">
+                    <h2>Family Registry</h2>
+                </div>
+            </div>
+
+            @foreach (var a in listfam)
+            {
+    <div class="item">
+        <h4>@a.FamilyName</h4>
+        <a href="~/family/@a.FamilyPic" data-lightbox="mygallery" data-title=@a.FamilyName>
+            <img src="~/family/@a.FamilyPic" width="150" />
+        </a>
+        <div>
+            <span><u>Statements</u></span><br />
+            <span>@a.Statements</span>
+        </div>
+        <div>
+            <button>Total Points Obtained: @a.Points</button>
+        </div>
+        <br /><br />
+        <h4>Family Members</h4>
+        <a asp-controller="Family"
+           asp-action="CreatePerson"
+           asp-route-fid="@a.FamilyId"
+           onclick="return confirm('Confirm add more family member??')">
+            Add More Family Member
+        </a>
+        <br />
+        @foreach (MemInFamSY row in Model)
+        {
+
+            @if (a.FamilyId == row.FamilyId)
+            {
+
+                <label>@row.FirstName @row.LastName</label>
+
+                <a asp-controller="Family"
+                   asp-action="EditPerson"
+                   asp-route-pid="@row.PersonId"
+                   onclick="return confirm('Edit Person Named @row.FirstName @row.LastName?')">
+                    @*<input type="button" value="Delete Goal" class="btn btn-danger" />*@
+                    Edit
+                </a>
+                <br />
+            }
+
+
+
+        }
+    </div>
+                }
+                    }
+
+                    else
+                    {
+                    <h2>You Have Not Created Any Family Yet!</h2>
+                    }
+                </div>
+</body>
+</html>
