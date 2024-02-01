@@ -1,0 +1,161 @@
+/* split page equally */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* centered horizontally and vertically */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  /* control left side */
+.left {
+    left: 0; 
+}
+
+.welcome-text{
+    color: var(--color-blue);
+    font-size: 60px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0 0 0;
+    text-align: left;
+}
+
+.suredes{
+    color: var(--color-grey);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+}
+
+.right {
+    right: 0;
+}
+
+/* all inputs */
+.signin-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+/* each input */
+input{
+    background-color: rgba(65, 142, 255, 0.1);
+
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 34px;
+
+    width: 370px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: none;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: var(--color-grey);
+}
+
+/* when clicked */
+input:focus {
+    outline:none;
+    box-shadow: -2px 4px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+input:hover {
+    outline:none;
+    box-shadow: -2px 4px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* checkbox and label */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: 15px; 
+    height: 15px; 
+}
+
+.checkbox-wrapper label {
+    margin-left: 4px; /* Adjust the spacing between the checkbox and the label */
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--color-grey);
+}
+
+/* remember me and forgot password */
+.before-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.forget-pass {
+    background: none;
+    color: var(--color-grey);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.forget-pass:hover{
+    color: var(--color-blue);
+}
+
+/* button{
+    width: 370px;
+    height: 60px;
+    flex-shrink: 0;  
+
+    border-radius: 12px;
+    border: none;
+    background: var(--color-blue);
+    box-shadow: -2px 4px 30px 0px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+
+    margin-top: 18px;
+    
+    color: white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+
+    transition-duration: 0.4s;
+} */
+
+button:hover {
+    background-color: var(--color-darker-blue);
+  }  

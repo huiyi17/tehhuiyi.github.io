@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GrabNGo"
+        tools:targetApi="31">
+         <activity
+            android:name=".controllers.OrderConfirmationPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.ViewCartPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.ConfirmAddOnPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.AddOnPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.BMStoreMenuPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CRStoreMenuPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.ChooseStorePage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CustomerMainPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CustomerRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.Customerlogin"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.Vendorlogin"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.VendorRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.ChooseOne"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".controllers.CompleteOrderPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrderConfirmationPageAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.ChooseStall"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.VendorMainPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/signup_btn_background"
+    tools:context=".controllers.BMStoreMenuPage">
+
+    <!-- This page is after choose_store_page_1 or choose_store_page_2 -->
+    <!-- Customers will first choose to either add or minus the quantity -->
+    <!-- Only after they increase the quantity by at least one, there will be an arrow appearing to allow them to continue -->
+    <!-- Customers will then be directed to the add-on page -->
+
+    <LinearLayout
+
+        android:id="@+id/StoreMenuPage2"
+        android:layout_width="416dp"
+        android:layout_height="650dp"
+        android:background="@drawable/background_customer_page"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/StoreName"
+                android:layout_width="250dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/store_name2"
+                android:textColor="#000000"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/StoreOpeningHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/StoreName"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="134dp"
+                android:text="Open 8:00AM - 6:30PM"
+                android:textColor="#315815"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/SearchTab"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="160dp"
+                android:background="@drawable/search_button"
+                android:paddingStart="10dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="230dp"
+                android:paddingBottom="8dp"
+                android:text="Search..."
+                android:textAlignment="center"
+                android:textColor="@color/translucent_gray2"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/SearchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/SearchTab"
+                android:layout_alignTop="@+id/SearchTab"
+                android:layout_alignEnd="@+id/SearchTab"
+                android:layout_alignBottom="@+id/SearchTab"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="317dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="search icon"
+                app:layout_constraintBottom_toBottomOf="@id/SearchTab"
+                app:layout_constraintEnd_toStartOf="@id/SearchTab"
+                app:layout_constraintStart_toStartOf="@id/SearchTab"
+                app:layout_constraintTop_toTopOf="@id/SearchTab"
+                app:srcCompat="@drawable/search_icon" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/MenuItem1Tab"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="250dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/MenuItem1Image"
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/banmian"/>
+
+                <TextView
+                    android:id="@+id/MenuItem1Name"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/bmmenu_item_1_name"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/MenuItem1Price"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="35dp"
+                    android:textColor="#000000"
+                    android:text="@string/bmmenu_item_1_price" />
+
+                <TextView
+                    android:id="@+id/MenuItem1Quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="290dp"
+                    android:layout_marginTop="69dp"
+                    android:textColor="#000000"
+                    android:textSize="17dp"
+                    android:text="@string/bmmenu_item_quantity" />
+
+                <ImageButton
+                    android:id="@+id/AddButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="260dp"
+                    android:layout_marginTop="69dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/add_button" />
+
+                <ImageButton
+                    android:id="@+id/MinusButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="305dp"
+                    android:layout_marginTop="69dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/minus_button" />
+
+                <ImageButton
+                    android:id="@+id/ArrowButton1"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/MenuItem2Tab"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="370dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/MenuItem2Image"
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/laksa"
+                    app:layout_constraintBottom_toBottomOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintEnd_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintStart_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintTop_toTopOf="@id/ChickenRiceStoreTab" />
+
+                <TextView
+                    android:id="@+id/MenuItem2Name"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/bmmenu_item_2_name"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/MenuItem2Price"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="35dp"
+                    android:textColor="#000000"
+                    android:text="@string/bmmenu_item_2_price" />
+
+                <TextView
+                    android:id="@+id/MenuItem2Quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="290dp"
+                    android:layout_marginTop="69dp"
+                    android:textColor="#000000"
+                    android:textSize="17dp"
+                    android:text="@string/bmmenu_item_quantity" />
+
+                <ImageButton
+                    android:id="@+id/AddButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="260dp"
+                    android:layout_marginTop="69dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/add_button" />
+
+                <ImageButton
+                    android:id="@+id/MinusButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="305dp"
+                    android:layout_marginTop="69dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/minus_button" />
+
+                <ImageButton
+                    android:id="@+id/ArrowButton2"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/MenuItem3Tab"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="490dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/MenuItem3Image"
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="-20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/fishballnoodle"
+                    app:layout_constraintBottom_toBottomOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintEnd_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintStart_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintTop_toTopOf="@id/ChickenRiceStoreTab" />
+
+                <TextView
+                    android:id="@+id/MenuItem3Name"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/bmmenu_item_3_name"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/MenuItem3Price"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="35dp"
+                    android:textColor="#000000"
+                    android:text="@string/bmmenu_item_3_price" />
+
+                <TextView
+                    android:id="@+id/MenuItem3Quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="290dp"
+                    android:layout_marginTop="69dp"
+                    android:textColor="#000000"
+                    android:textSize="17dp"
+                    android:text="@string/bmmenu_item_quantity" />
+
+                <ImageButton
+                    android:id="@+id/AddButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="260dp"
+                    android:layout_marginTop="69dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/add_button" />
+
+                <ImageButton
+                    android:id="@+id/MinusButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="305dp"
+                    android:layout_marginTop="69dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/minus_button" />
+
+                <ImageButton
+                    android:id="@+id/ArrowButton3"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/CartLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/add_to_cart"
+        android:contentDescription="add to cart icon"/>
+
+    <ImageView
+        android:id="@+id/UserLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_icon"
+        android:contentDescription="user icon"/>
+
+    <ImageView
+        android:id="@+id/BackArrowLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow_icon"
+        android:contentDescription="arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

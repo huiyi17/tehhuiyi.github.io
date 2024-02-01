@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/signup_btn_background"
+    tools:context=".controllers.CustomerMainPage">
+
+<!-- This page is the main page customer will view when they login -->
+<!-- There will be an auto pop-up for customer to choose their pick-up time before they can continue -->
+<!-- After choosing their pick-up time customers will be directed to the choose_store_page1 or choose_store_page_2 -->
+
+    <LinearLayout
+
+        android:id="@+id/MainCustomerPage"
+        android:layout_width="416dp"
+        android:layout_height="650dp"
+        android:background="@drawable/background_customer_page"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/UserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/user_name"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/FixedText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="90dp"
+                android:text="Quick, grab your order before they run out!"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/FixedText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="120dp"
+                android:text="Choose Your Store"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/SearchTab"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="160dp"
+                android:background="@drawable/search_button"
+                android:paddingStart="10dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="230dp"
+                android:paddingBottom="8dp"
+                android:text="Search..."
+                android:textAlignment="center"
+                android:textColor="@color/translucent_gray2"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/SearchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/SearchTab"
+                android:layout_alignTop="@+id/SearchTab"
+                android:layout_alignEnd="@+id/SearchTab"
+                android:layout_alignBottom="@+id/SearchTab"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="317dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="search icon"
+                app:layout_constraintBottom_toBottomOf="@id/SearchTab"
+                app:layout_constraintEnd_toStartOf="@id/SearchTab"
+                app:layout_constraintStart_toStartOf="@id/SearchTab"
+                app:layout_constraintTop_toTopOf="@id/SearchTab"
+                app:srcCompat="@drawable/search_icon" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ChickenRiceStoreTab"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="250dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/ChickenRiceStoreName"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Dong Sheng Chicken Rice"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/ChickenRiceStoreLastOrderTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="40dp"
+                    android:text="Last Order: 11.30AM"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/ChickenRiceStoreOpeningHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="62dp"
+                    android:text="8:00AM - 6:30PM"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/ChickenRiceImage"
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/steamed_white_chicken_rice"
+                    app:layout_constraintBottom_toBottomOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintEnd_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintStart_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintTop_toTopOf="@id/ChickenRiceStoreTab" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/BanmianStoreTab"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="370dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/BanmianStoreName"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="15dp"
+                    android:text="KL Handmade Noodle"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/BanmianStoreLastOrderTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="40dp"
+                    android:text="Last Order: 11.30AM"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/BanmianStoreOpeningHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="62dp"
+                    android:text="8:00AM - 6:30PM"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/BanmianImage"
+                    android:layout_width="200dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="-25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/banmian"
+                    app:layout_constraintBottom_toBottomOf="@id/BanmianStoreTab"
+                    app:layout_constraintEnd_toStartOf="@id/BanmianStoreTab"
+                    app:layout_constraintStart_toStartOf="@id/BanmianStoreTab"
+                    app:layout_constraintTop_toTopOf="@id/BanmianStoreTab" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/MixedRiceStoreTab"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="490dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/MixedRiceStoreName"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Mixed Rice"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/MixedRiceStoreLastOrderTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="40dp"
+                    android:text="Last Order: 11.30AM"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/MixedRiceStoreOpeningHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="62dp"
+                    android:text="8:00AM - 6:30PM"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/MixedRiceImage"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="-20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    app:layout_constraintBottom_toBottomOf="@id/MixedRiceStoreTab"
+                    app:layout_constraintEnd_toStartOf="@id/MixedRiceStoreTab"
+                    app:layout_constraintStart_toStartOf="@id/MixedRiceStoreTab"
+                    app:layout_constraintTop_toTopOf="@id/MixedRiceStoreTab"
+                    android:src="@drawable/mixed_rice" />
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/SelectTimePopUp"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_centerInParent="true"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:id="@+id/SelectTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="To continue, please select a pick-up time"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/SelectTimeList"
+                        android:layout_width="150dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="60dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:elevation="0dp"
+                        app:strokeColor="@color/black">
+
+                        <ImageButton
+                            android:id="@+id/Time1230PM"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="0dp"
+                            android:src="@drawable/pickup_time_selector2" />
+
+                        <ImageButton
+                            android:id="@+id/Time1PM"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="40dp"
+                            android:src="@drawable/pickup_time_selector2" />
+
+                        <ImageButton
+                            android:id="@+id/Time130PM"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="80dp"
+                            android:src="@drawable/pickup_time_selector2" />
+
+                        <ImageButton
+                            android:id="@+id/Time2PM"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="120dp"
+                            android:src="@drawable/pickup_time_selector1" />
+
+                        <TextView
+                            android:id="@+id/Time1230PMText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:text="12:30PM"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/Time1PMText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="50dp"
+                            android:text="1:00PM"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/Time130PMText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="90dp"
+                            android:text="1:30PM"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/Time2PMText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="130dp"
+                            android:text="2:00PM"
+                            android:textColor="#000000" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/CartLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/add_to_cart"
+        android:contentDescription="add to cart icon"/>
+
+    <ImageView
+        android:id="@+id/UserLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_icon"
+        android:contentDescription="user icon"/>
+
+    <ImageView
+        android:id="@+id/BackArrowLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow_icon"
+        android:contentDescription="arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

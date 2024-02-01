@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/signup_btn_background"
+    tools:context=".controllers.ChooseStall">
+
+    <!-- This page is after add_on_page_2 -->
+    <!-- Customers will check their orders and click on the place order button -->
+    <!-- Customers will be directed to order confirmation page -->
+
+    <LinearLayout
+
+        android:id="@+id/ViewCartPage"
+        android:layout_width="416dp"
+        android:layout_height="650dp"
+        android:background="@drawable/background_customer_page"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chickenButton"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/button_enabled"
+                android:text="Chicken Rice Stall" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/banmianButton"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/button_enabled"
+                android:text="Ban Mian Stall" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/BackArrowLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow_icon"
+        android:contentDescription="arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

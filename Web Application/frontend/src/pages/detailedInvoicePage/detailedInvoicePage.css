@@ -1,0 +1,142 @@
+.top-part {
+    display: flex;
+    flex-direction: row;
+    margin-left: 117px;
+    margin-top: -1%;
+}    
+
+.go-back-container {
+    height: 70px;
+    width: 50px;
+}
+
+.go-back {
+    height: 44.74px;
+    width: 30px;
+    margin-right: 36px;
+}
+
+.soa-title {
+    color: var(--color-blue);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.supplier-name {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: var(--color-grey);
+    font-weight: 600;
+}
+
+.issued-date, .due-date {
+    margin: 0;
+    color: var(--color-grey);
+    font-weight: 600;
+}
+
+/* table */
+.table-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5%;
+}
+  
+.scrollable {
+    width: 80%;
+    height: 250px; 
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    overflow-x: auto;
+}
+  
+.custom-table {
+    max-width: 100%;
+    background-color: transparent;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.transparent-table tbody td {
+  background-color: transparent;
+  border: none;
+}
+
+.transparent-table thead th {
+    background-color: rgba(65, 142, 255, 1);
+    /* border-radius: 12px; */
+    color: var(--color-white2);
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.transparent-table tbody tr td {
+    border-bottom: 1px solid #000000;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+}
+
+.transparent-table thead th:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.transparent-table thead th:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.bottom-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 5px; 
+    width: 100%;
+    padding: 10px 38px;
+}
+
+.export-button, .payment-button, .excel-button, .csv-button {
+    border: none;
+    border-radius: 39px;
+    height: 60px;
+    width: 60px;
+}
+
+.export-button img, .payment-button img, .excel-button img, .csv-button img {
+    height: 60px;
+    width: 60px;
+}
+
+.export {
+    display: flex;
+    flex-direction: row;
+}
+
+.excel-button, .csv-button {
+    margin-left: 14px;
+}
+
+.bottom-part .right-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 38px;
+    bottom: 5px;
+    padding: 5px 0;
+}
+
+.total-amount-invoice {
+    margin-right: 100px;
+    font-size: 15px;
+    margin-bottom: 0;
+
+}
+

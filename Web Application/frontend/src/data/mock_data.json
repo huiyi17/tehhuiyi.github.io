@@ -1,0 +1,226 @@
+{
+    "soaDetails":[
+    {
+      "soaID": "#3379",
+      "supplier": "Bakers Room",
+      "dueDate": "13/07/2023",
+      "amount": "$4000.50"
+    },
+    {
+      "soaID": "#3028",
+      "supplier": "Amy's Market",
+      "dueDate": "08/07/2023",
+      "amount": "$4370.00"
+    },
+    {
+      "soaID": "#1342",
+      "supplier": "Mom's Shop",
+      "dueDate": "08/08/2023",
+      "amount": "$4340.50"
+    },
+    {
+      "soaID": "#2222",
+      "supplier": "Mom's Shop",
+      "dueDate": "08/08/2023",
+      "amount": "$4340.50"
+    },
+    {
+      "soaID": "#4125",
+      "supplier": "Mom's Shop",
+      "dueDate": "08/08/2023",
+      "amount": "$4340.50"
+    },
+    {
+      "soaID": "#0001",
+      "supplier": "Mom's Shop",
+      "dueDate": "08/08/2023",
+      "amount": "$4340.50"
+    }
+  ],
+
+  "soaProductDetails":[
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$400.50"},
+    { 
+      "product": "Burger Bun",
+      "quantity": "200",
+      "amount": "$400.50"},
+    { 
+      "product": "Toast Bun",
+      "quantity": "2000",
+      "amount": "$4000.50"},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50"},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50"},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50"},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50"}
+  ],
+
+  "invoiceDetails": [
+  {
+    "invoiceID": "#1111",
+    "supplier": "Bakers Room",
+    "issuedDate": "13/06/2023",
+    "dueDate": "13/07/2023",
+    "amount": "$4000.50"},
+  {
+    "invoiceID": "#2550",
+    "supplier": "Amy's Market",
+    "issuedDate": "08/06/2023",
+    "dueDate": "08/07/2023",
+    "amount": "$4370.00" },
+  {
+    "invoiceID": "#2090",
+    "supplier": "Mom's Shop",
+    "issuedDate": "08/02/2023",
+    "dueDate": "08/08/2023",
+    "amount": "$4340.50" },
+  {
+    "invoiceID": "#0002",
+    "supplier": "Dad's Shop",
+    "issuedDate": "08/04/2023",
+    "dueDate": "09/04/2023",
+    "amount": "$2340.50" },
+  {
+    "invoiceID": "#2002",
+    "supplier": "Aunty's Market",
+    "issuedDate": "08/07/2023",
+    "dueDate": "08/08/2023",
+    "amount": "$3300.70"}
+  ],
+
+  "invoiceProductDetails":[
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$400.50",
+      "comment": "quantity reduced from 400 to 200"},
+    { 
+      "product": "Burger Bun",
+      "quantity": "200",
+      "amount": "$400.50",
+      "comment": ""},
+    { 
+      "product": "Toast Bun",
+      "quantity": "2000",
+      "amount": "$4000.50",
+      "comment": ""},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50",
+      "comment": ""},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50",
+      "comment": ""},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50",
+      "comment": ""},
+    { 
+      "product": "Hot Dog Bun",
+      "quantity": "200",
+      "amount": "$4000.50",
+      "comment": ""}
+  ],
+
+  "listInvoices": [
+    {
+      "invoiceID": "#1111",
+      "issuedDate": "13/06/2023",
+      "dueDate": "13/07/2023",
+      "amount": "$4000.50",
+      "checkbox": false },
+    {
+      "invoiceID": "#2550",
+      "supplier": "Amy's Market",
+      "issuedDate": "08/06/2023",
+      "dueDate": "08/07/2023",
+      "amount": "$4370.00",
+      "checkbox": false },
+    {
+      "invoiceID": "#2090",
+      "supplier": "Mom's Shop",
+      "issuedDate": "08/02/2023",
+      "dueDate": "08/08/2023",
+      "amount": "$4340.50",
+      "checkbox": false },
+    {
+      "invoiceID": "#0002",
+      "supplier": "Dad's Shop",
+      "issuedDate": "08/04/2023",
+      "dueDate": "09/04/2023",
+      "amount": "$2340.50",
+      "checkbox": false },
+    {
+      "invoiceID": "#2002",
+      "supplier": "Aunty's Market",
+      "issuedDate": "08/07/2023",
+      "dueDate": "08/08/2023",
+      "amount": "$3300.70",
+      "checkbox": false }
+  ],
+
+  "missingInvoices": [
+    {
+      "invoiceID": "#1111",
+      "issuedDate": "13/06/2023",
+      "dueDate": "13/07/2023",
+      "amount": "$4000.50" },
+    {
+      "invoiceID": "#2550",
+      "supplier": "Amy's Market",
+      "issuedDate": "08/06/2023",
+      "dueDate": "08/07/2023",
+      "amount": "$4370.00" },
+    {
+      "invoiceID": "#2090",
+      "supplier": "Mom's Shop",
+      "issuedDate": "08/02/2023",
+      "dueDate": "08/08/2023",
+      "amount": "$4340.50"},
+    {
+      "invoiceID": "#0002",
+      "supplier": "Dad's Shop",
+      "issuedDate": "08/04/2023",
+      "dueDate": "09/04/2023",
+      "amount": "$2340.50" },
+    {
+      "invoiceID": "#2002",
+      "supplier": "Aunty's Market",
+      "issuedDate": "08/07/2023",
+      "dueDate": "08/08/2023",
+      "amount": "$3300.70" }
+  ],
+
+  "validEmails": [
+    {
+      "email": "test@gmail.com",
+      "password": "test" },
+    {
+      "email": "abc@gmail.com",
+      "password": "abc" },
+    {
+      "email": "aaa@yahoo.com",
+      "password": "aaa" },
+    {
+      "email": "hello@gmail.com",
+      "password": "hello" }
+  ]
+}

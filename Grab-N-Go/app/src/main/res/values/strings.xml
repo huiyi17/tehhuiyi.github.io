@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">GrabNGo</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="user_name">Hi, Xue Min!</string>
+    <string name="vendor_store_name">IDK</string>
+
+    <string name="store_name1">Dong Sheng Chicken Rice</string>
+    <string name="crmenu_item_1_price">$5.00</string>
+    <string name="crmenu_item_quantity">0</string>
+    <string name="crmenu_item_2_price">$5.00</string>
+    <string name="crmenu_item_3_price">$7.00</string>
+    <string name="crmenu_item_1_name">Steamed White Chicken Rice</string>
+    <string name="crmenu_item_2_name">Roasted Chicken Rice</string>
+    <string name="crmenu_item_3_name">Roasted Chicken Rice Set Meal</string>
+    <string name="crmenu_addon_1_price">+0.8</string>
+    <string name="crmenu_addon_2_price">+1.0</string>
+    <string name="crmenu_addon_3_price">+0.4</string>
+
+    <string name="store_name2">KL Handmade Noodle</string>
+    <string name="bmmenu_item_1_price">$4.20</string>
+    <string name="bmmenu_item_quantity">0</string>
+    <string name="bmmenu_item_2_price">$5.00</string>
+    <string name="bmmenu_item_3_price">$2.70</string>
+    <string name="bmmenu_item_1_name">Banmian Dry Noodle</string>
+    <string name="bmmenu_item_2_name">Laksa</string>
+    <string name="bmmenu_item_3_name">Fishball Noodle</string>
+    <string name="bmmenu_addon_1_price">+0.5</string>
+    <string name="bmmenu_addon_2_price">+0.8</string>
+    <string name="bmmenu_addon_3_price">+0.6</string>
+
+    <string name="order_name_1">Banmian Dry</string>
+    <string name="order_quantity_1">x1</string>
+    <string name="order_price_1">$4.20</string>
+    <string name="add_on_1">add cheese tofu</string>
+    <string name="order_name_2">Laksa</string>
+    <string name="add_on_2">no add on</string>
+    <string name="order_name_3">Banmian Soup</string>
+    <string name="order_quantity_3">x1</string>
+    <string name="order_price_3">$5.00</string>
+    <string name="timeslot">SLOT: 12:30PM</string>
+    <string name="number_of_orders">TOTAL ORDERS: 20</string>
+    <string name="order_number">Order #1</string>
+    <string name="add_on_1_price">$0.80</string>
+    <string name="total_price_1">$5.00</string>
+    <string name="number_of_orders_update">TOTAL ORDERS: 19</string>
+
+    <string name="timeslot1">12.30 PM</string>
+    <string name="timeslot2">1.00 PM</string>
+    <string name="timeslot3">1.30 PM</string>
+    <string name="timeslot4">2.00 PM</string>
+
+    <string-array name="Stores">
+        <item>Muslim</item>
+        <item>Korean</item>
+        <item>Western</item>
+    </string-array>
+
+
+</resources>

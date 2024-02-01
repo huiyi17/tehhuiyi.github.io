@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/signup_btn_background"
+    tools:context=".controllers.ConfirmAddOnPage">
+
+    <!-- This page is after add_on_page_1 -->
+    <!-- Customers will only be allowed to proceed after checking one of the boxes -->
+    <!-- There will be a pop-up to prompt users to choose whether to continue shopping or view cart -->
+    <!-- They will then be directed to view_cart_page or back to choose_store_page -->
+
+    <LinearLayout
+
+        android:id="@+id/AddOnPage2"
+        android:layout_width="416dp"
+        android:layout_height="650dp"
+        android:background="@drawable/background_customer_page"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/FoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:text="Undefined"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/FixedText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="Price"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_below="@+id/FoodName"/>
+
+            <TextView
+                android:id="@+id/FoodPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="Undefined"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/FixedText3"/>
+
+            <TextView
+                android:id="@+id/FixedText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="Choice of Add On"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_below="@+id/FoodPrice"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/AddOn1TabFinal"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                android:layout_below="@+id/FixedText4">
+
+                <TextView
+                    android:id="@+id/AddOn1Final"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Undefined"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/AddOn1PriceFinal"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Undefined"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/ConfirmedFinal1"
+                    android:layout_width="19dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/tick"
+                    android:visibility="gone"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/AddOn2TabFinal"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/logo_background"
+                android:layout_below="@+id/AddOn1TabFinal">
+
+                <TextView
+                    android:id="@+id/AddOn2Final"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Undefined"
+                    android:textSize="15dp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/AddOn2PriceFinal"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Undefined"
+                    android:textSize="15dp"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:id="@+id/ConfirmedFinal2"
+                    android:layout_width="19dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/tick"
+                    android:visibility="gone"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/AddOn3TabFinal"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/logo_background"
+                android:layout_below="@+id/AddOn2TabFinal">
+
+                <TextView
+                    android:id="@+id/AddOn3Final"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Undefined"
+                    android:textSize="15dp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/AddOn3PriceFinal"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Undefined"
+                    android:textSize="15dp"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:id="@+id/ConfirmedFinal3"
+                    android:layout_width="19dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/tick"
+                    android:visibility="gone"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ProceedButton2"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/AddOn3TabFinal"
+                android:layout_alignEnd="@+id/AddOn3TabFinal"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="580dp"
+                android:background="@drawable/button_enabled"
+                android:text="Proceed" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/SelectNextActionPopUp"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageButton
+                        android:id="@+id/ContinueShoppingTab"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-20dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/button_enabled" />
+
+                    <ImageButton
+                        android:id="@+id/ViewCartTab"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/button_enabled" />
+
+                    <TextView
+                        android:id="@+id/FixedText11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-20dp"
+                        android:text="Continue Shopping"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/FixedText12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:text="View Cart"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/CartLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/add_to_cart"
+        android:contentDescription="add to cart icon"/>
+
+    <ImageView
+        android:id="@+id/UserLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_icon"
+        android:contentDescription="user icon"/>
+
+    <ImageView
+        android:id="@+id/BackArrowLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow_icon"
+        android:contentDescription="arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

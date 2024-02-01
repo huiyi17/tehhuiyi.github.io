@@ -1,0 +1,9 @@
+.customDatePickerInputInvoice {
+    /* Add your custom styles for the DatePicker input */
+    border-radius: 5px;
+    background-color: #FFE8E8;
+    border: none;
+    width: 90%;
+    padding: 5% 2% 5% 2%;
+    margin-top: 2%;
+  }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/back3"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/yellow_tablecloth"
+    tools:context=".controllers.ChooseOne">
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="320dp"
+        android:layout_height="400dp"
+        android:background="@drawable/background_shape"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="398dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="4dp"
+            android:fontFamily="monospace"
+            android:paddingStart="70dp"
+            android:text="Think. Click. Post or Collect. "
+            android:textAlignment="viewStart"
+            android:textColor="#08330A"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/connectvendorbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/email_login"
+            android:drawableLeft="@drawable/white_vendor"
+            android:gravity="center|center_horizontal"
+            android:paddingStart="10dp"
+            android:text="Connect as Vendor"
+            android:textAlignment="center"
+            android:textColor="#FFFDFD" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/connectcustomerbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/button_enabled"
+            android:drawableLeft="@drawable/white_customer"
+            android:gravity="center|center_horizontal"
+            android:paddingStart="10dp"
+            android:text="Connect as Customer"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
