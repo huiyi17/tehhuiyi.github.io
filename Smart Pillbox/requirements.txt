@@ -1,0 +1,5 @@
+awsiot
+awscrt
+RPi.GPIO
+hx711
+AWSIoTPythonSDK

@@ -1,0 +1,8 @@
+**Models Tested**
+Several segmentation models were trained and evaluated to identify the most effective model architecture for our problem. These models include:
+1. UNet: A widely adopted architecture featuring a symmetric encoder-decoder structure with skip connections. Its ability to capture fine and coarse details through skip connections is highly effective in biomedical image segmentation, making it a suitable choice for our segmentation task.
+2. UNet++: An enhanced version of UNet that introduces dense skip connections and deep supervision. This redesigned skip connection pattern creates an ensemble of U-Nets of varying depths, potentially enabling more precise segmentation through better feature fusion. It may potentially perform better than UNet for our task.
+3. DeepLabV3 (with ResNet50): An advanced semantic segmentation architecture that employs atrous spatial pyramid pooling (ASPP) to robustly segment objects at multiple scales. The ResNet50 backbone provides strong feature extraction capabilities while maintaining computational efficiency through residual connections. This variant is particularly known for its effective balance between accuracy and computational efficiency.
+4. DeepLabV3 (with mobilenet_v2): A lightweight variant of DeepLabV3 utilizing MobileNetV2 as the backbone network. This configuration offers reduced computational overhead while preserving effective semantic segmentation capabilities, making it suitable for resource-constrained environments.
+5. MAnet: A Multi-scale Attention Network that incorporates attention mechanisms at multiple scales. This architecture enhances feature representation by focusing on relevant spatial regions while maintaining awareness of both local and global context.
+
