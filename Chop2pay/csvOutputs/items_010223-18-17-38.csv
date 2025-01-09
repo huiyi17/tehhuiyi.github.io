@@ -1,0 +1,9 @@
+Time,bbox_labels
+18:17:40,['banana' 'broccoli' 'bottle' 'apple']
+18:17:41,['banana' 'broccoli' 'bottle' 'apple']
+18:17:42,['banana' 'broccoli' 'bottle' 'apple']
+18:17:43,['broccoli' 'banana' 'apple' 'bottle' 'banana']
+18:17:44,['broccoli' 'banana' 'bottle' 'apple']
+18:17:45,['broccoli' 'banana' 'apple' 'bottle']
+18:17:46,['broccoli' 'banana' 'bottle' 'apple']
+18:17:48,['broccoli' 'banana' 'bottle' 'apple']
