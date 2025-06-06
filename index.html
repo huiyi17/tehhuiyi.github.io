@@ -23,7 +23,7 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Teh Hui Yi</h1>
-								<p>Hello, I'm Hui Yi, a recent-graduate pursuing a degree in computer science with a minor in AI at the Singapore University of Technology and Design (SUTD). Welcome to my portfolio, where you can explore both my academic projects and working experiences.
+								<p>Hello, I'm Hui Yi, a recent-graduate pursuing a degree in computer science with a minor in Artificial Intelligence at the Singapore University of Technology and Design (SUTD). Welcome to my portfolio, where you can explore both my academic projects and working experiences.
 								</p>
 							</div>
 						</div>
@@ -64,6 +64,9 @@
 						<!-- Project -->
 							<article id="project">
 								<h2 class="major">Project</h2>
+								<h3 class="major">CHIME (Jan 2025 - Apr 2025)</h3> 
+								<p>The project goal is to develop a mobile game that aims to introduce a crisis management framework that empowers first responders to resolve unexpected emergencies effectively. CHIME, stands for cognitive load, heuristics, information clarity, mental model, external aid. By playing our mobile game, users will be tested on these cognitive factors. </p>
+								<p>Click <a href="https://github.com/huiyi17/tehhuiyi.github.io/tree/main/Smart%20Pillbox">here</a> to take a look on this project and <a href="https://youtu.be/1TFeuhNtHeM">here</a> for the demonstration video.</p>
 								<h3 class="major">Smart Pillbox (Sep 2024 - Dec 2024)</h3> 
 								<p>This project aimed to develop a Smart IoT Pillbox that enables continuous monitoring of elderly medication adherence. The solution provides physical and digital reminders for medication intake, allows caregivers to remotely track adherence in real time, and sends refill notifications when medication is consumed. The system combines hardware and cloud-based IoT services to enhance medication management and ensure timely alerts. My contributions involved both hardware integration and cloud-based IoT implementation. I integrated a weight sensor with a Raspberry Pi, wiring a load cell and amplifier to the appropriate GPIO pins. I configured the Raspberry Pi to communicate with AWS IoT Core by installing certificates and the AWS IoT Device SDK, ensuring secure connectivity. I designed an AWS IoT rule to insert and update medication data, such as intake status and pillbox ID, in a DynamoDB table. To automate monitoring, I implemented a scheduled AWS Lambda function using EventBridge, which periodically scanned the database and sent alerts via MQTT if adherence was not met. Additionally, I developed and deployed a Python script (mqtt_client.py) on the Raspberry Pi to read weight sensor data and publish it to AWS MQTT topics. To streamline deployment and ensure consistency, I containerized the solution using Docker. These contributions enhanced the system's efficiency and reliability, offering a scalable solution to improve medication adherence for elderly users.</p>
 								<p>Click <a href="https://github.com/huiyi17/tehhuiyi.github.io/tree/main/Smart%20Pillbox">here</a> to take a look on this project and <a href="https://youtu.be/1TFeuhNtHeM">here</a> for the demonstration video.</p>
